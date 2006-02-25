@@ -1,0 +1,15 @@
+<html>
+ <head><title>Include test</title></head>
+
+ <body>
+ <h1>before</h1>
+    <div style="border: 1px solid red">
+      <%@ include file="fib.csp" %>
+    </div>
+    <br>
+    <div style="border: 1px solid blue">
+      <%@ include file="session.csp" %>
+    </div>
+<h1>after</h1>
+  </body>
+</html>

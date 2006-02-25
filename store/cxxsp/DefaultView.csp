@@ -1,0 +1,199 @@
+<%@ page import="vector,Category.h,Article.h" %>
+<%# using namespace std; %>
+<%!
+    typedef vector<Category> categories_t;
+    typedef vector<Article> articles_t;
+    typedef vector<Product> products_t;
+%>
+<%
+    categories_t categories = request.getAttribute<categories_t>("categories");
+    articles_t weekly = request.getAttribute<articles_t>("weekly");
+    articles_t featured = request.getAttribute<articles_t>("featured");
+    articles_t wereReading = request.getAttribute<articles_t>("wereReading");
+    articles_t notable = request.getAttribute<articles_t>("notable");
+    products_t recomended = request.getAttribute<products_t>("recomended");
+%>
+<html>
+<head>
+<title>Default</title>
+<link rel="stylesheet" type="text/css" href="style/Style.css">
+</head>
+<body bgcolor="#FFFFFF" link="#000000" alink="#FF0000" vlink="#000000" text="#000000" class="NoisePageBODY">
+<%@ include file="Header.csp" %>
+<table border="0" cellspacing="5" width="100%">
+  <tr valign="top">
+    <td width="20%">
+      <form action="Products.sxx" method="get">
+        <font class="NoiseSectionHeaderFont">Search Products </font>
+        <table border="0" cellpadding="2" cellspacing="1" width=100%>
+          <tr>
+            <td>
+              <select class="NoiseSelect" name="category_id">
+                <option selected value="">All</option>
+                  <% for(unsigned i=0;i<categories.size();++i) { %>
+                    <option value="<%=categories[i].id%>"><%=categories[i].name%></option>
+                  <% } %>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><input class="NoiseInput" maxlength="250" name="s_keyword">&nbsp;</td>
+          </tr>
+          <tr>
+            <td nowrap>
+              <input class="NoiseButton" type="submit" value="Search">&nbsp; </td>
+          </tr></form>
+        </table>
+      <br><a class="NoiseDataLink" href="Search.sxx">Advanced search</a>
+      <br><br>
+      <table border="0" cellpadding="5" cellspacing="0" width=100%>
+        <tr>
+            <td bgcolor="#395A9C"><font color="#FFFFFF"><B>Categories</B></font></td>
+        </tr>
+      </table>
+      <table border="0" cellpadding="1" cellspacing="0" width=100%>
+      <tr>
+        <td bgcolor="#395A9C">
+            <table border="0" cellpadding="3" cellspacing="0" width=100%>
+              <% for(unsigned i=0;i<categories.size();++i) { %>
+                <tr>
+                    <td class="NoiseDataTD"><a class="NoiseDataLink" href="Products.sxx?category_id=<%=categories[i].id%>"><%=categories[i].name%></a>&nbsp;</td>
+                </tr>
+              <% } %>
+              <% if(categories.empty()) { %>
+            <tr>
+              <td class="NoiseDataTD">No records&nbsp;</td>
+            </tr>
+               <% } %>
+            </table>
+
+        </td>
+      </tr>
+      </table>
+      <br>
+      <table border="0" cellpadding="5" cellspacing="0" width=100%>
+      <tr>
+        <td bgcolor="#395A9C"><font color="#FFFFFF"><B>Weekly Special</B></font></td>
+      </tr>
+      </table>
+      <table border="0" cellpadding="1" cellspacing="0" width=100%>
+        <tr>
+            <td bgcolor="#395A9C">
+              <table border="0" cellpadding="3" cellspacing="0" width=100%>
+               <% for(unsigned i=0;i<weekly.size();++i) { %>
+                    <tr>
+                      <td class="NoiseDataTD"><%= weekly[i].title %>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td class="NoiseDataTD"><%= weekly[i].desc %>&nbsp;</td>
+                    </tr>
+               <% } if(weekly.empty()) { %>
+                    <tr>
+                      <td class="NoiseDataTD">No records&nbsp;</td>
+                    </tr>
+               <% } %>
+              </table>
+             </td>
+        </tr>
+      </table>
+      </p>
+    </td>
+    <td>
+        <% if(request.hasAttribute("error")) { %>
+        <table><tr>
+          <td colspan="2" class="NoiseErrorDataTD"><%= request.getAttribute<string>("error") %></td>
+        </tr></table>
+        <% } %>      
+      <font class="NoiseFormHeaderFont">What We're Reading</font>
+      <table border="0" cellpadding="5" cellspacing="1">
+      <% for(unsigned i=0;i<wereReading.size(); ++i) { %>
+        <tr>
+          <td valign="top" width="125"><a href="<%=wereReading[i].link%>"><img class="NoiseInput" src="<%=wereReading[i].img%>" border="0"></a></td>
+          <td valign="top"><p><a class="NoiseCaptionLink" href="<%=wereReading[i].link%>"><%=wereReading[i].title%></a>
+              <p><%=wereReading[i].desc%></td>
+       </tr>
+      <% } if(wereReading.empty()) { %>
+        <tr>
+          <td>No records</td>
+        </tr>
+      <% } %>
+      </table>
+      <br><br>
+      <font class="NoiseFormHeaderFont">This Week's Featured Books</font>
+      <table border="0" cellpadding="5" cellspacing="1" class="NoiseFormTABLE">
+      <% for(unsigned i=0;i<featured.size(); ++i) { %>
+        <tr>
+          <td valign="top" width="125"><a href="<%=featured[i].link%>"><img class="NoiseInput" src="<%=featured[i].img%>" border="0"></a></td>
+          <td valign="top"><p><a class="NoiseCaptionLink" href="<%=featured[i].link%>"><%=featured[i].title%></a>
+              <p><%=featured[i].desc%></td>
+        </tr>
+      <% } if(featured.empty()) { %>
+        <tr>
+          <td>No records</td>
+        </tr>
+      <% } %>
+      </table>
+      <br><br>
+      <font class="NoiseFormHeaderFont">New &amp; Notable</font>
+      <table border="0" cellpadding="5" cellspacing="1">
+      <% for(unsigned i=0;i<notable.size(); ++i) { %>
+        <tr>
+          <td valign="top" width="125"><a href="<%=notable[i].link%>"><img class="NoiseInput" src="<%=notable[i].img%>" border="0"></a></td>
+          <td valign="top"><p><a class="NoiseCaptionLink" href="<%=notable[i].link%>"><%=notable[i].title%></a>
+              <p><%=notable[i].desc%></td>
+        </tr>
+      <% } if(notable.empty()) { %>
+        <tr>
+          <td>No records</td>
+        </tr>
+      <% } %>
+      </table>
+      <br><br>
+      <!-- BEGIN Grid new --><!-- END Grid new --></p>
+    </td>
+        <td>
+            <p><font class="NoiseSectionHeaderFont">Recomended Titles</font>
+            <p>
+               <%if(!recomended.empty()) { %>
+                <table border="0" cellpadding="1" cellspacing="0" width=100%>
+                <tr>
+                <td bgcolor="#395A9C">
+                  <% for(unsigned int i=0;i<recomended.size();++i) { string link = "ProductDetails.sxx?product_id="; %>
+                    <table border="0" cellpadding="5" cellspacing="0">
+                    <tr>
+                    <td class="NoiseAltDataTD" colspan="2">
+                        <a class="NoiseDataLink" href="<%=link%><%=recomended[i].product_id%>"><%=recomended[i].name%></a>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td class="NoiseAltDataTD">
+                        <a href="<%=link%><%=recomended[i].product_id%>"><img class="NoiseInput" src="<%=recomended[i].img%>" border="0"></a>
+                    </td>
+                    <td class="NoiseAltDataTD" valign="top"><font class="NoiseHighlightFont">Price: <%=recomended[i].price%></font></td>
+                    </tr>
+                    </table>
+                  <% } %>
+                </td>
+                </tr>
+                </table>
+              <% }else{ %>
+                <table border="0" cellpadding="1" cellspacing="0" width=100%>
+                <tr>
+                <td bgcolor="#395A9C">
+
+                    <table border="0" cellpadding="5" cellspacing="0">
+                    <tr>
+                        <td class="NoiseAltDataTD">No records</td>
+                        </tr>
+                    </table>
+
+                </td>
+                </tr>
+                </table>
+              <% } %>
+        </td>
+    </tr>
+</table>
+<%@ include file="Footer.csp" %>
+</body>
+</html>

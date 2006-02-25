@@ -1,0 +1,2 @@
+* remove libservlet.a, move bodies to servlet_impl
+* mulitple servlets in one .so

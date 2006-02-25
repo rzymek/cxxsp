@@ -1,0 +1,15 @@
+<html>
+<body>
+    <mysql:query sql="SELECT * FROM store_products">
+        <table border>
+            <mysql:rows>
+              <tr>
+                <mysql:fields>
+                    <td><mysql:field/></td>
+                </mysql:fields>
+              </tr>
+            </mysql:rows>
+        </table>
+    </mysql:query>
+</body>
+</html>

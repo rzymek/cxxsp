@@ -1,0 +1,4 @@
+* all collections are returned using std::auto_ptr
+* all string are returnd by value using std::string
+* all other objects created as a result of method call are returned using std::auto_ptr
+* all objects which are in a reltionship one-many are returned by reference of const reference or pointer (if there is a posibility of returning null)

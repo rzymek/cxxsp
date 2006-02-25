@@ -1,0 +1,4 @@
+* compiler flags
+* BoostIncludeDir directive
+* tablib support
+* any reason for jspInit()?

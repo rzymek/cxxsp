@@ -1,0 +1,52 @@
+<%@ page import="vector"%>
+<%@ page import="string"%>
+<%@ page import="Cookie.h"%>
+
+<%#
+        using namespace std;
+%>
+<html>
+<head>
+        <title>Test</title>
+</head>
+<body>
+<%
+        bool clear = !request.getParameter("clear").empty();
+        vector<Cookie> cookies = request.getCookies();
+        string bar = "";
+        for(unsigned i=0;i<cookies.size();++i)
+                if(clear){
+                        Cookie c(cookies[i].getName(),"");
+                        c.setMaxAge(0); //discard cookie
+                        response.addCookie(c);
+                }else if(cookies[i].getName() == "histbar") {
+                        bar = cookies[i].getValue();
+                        break;
+                }
+        if(!clear)
+                response.addCookie(Cookie("histbar",(bar+"#")));
+%>
+<% if(clear) { %>
+    <h1>History cleared</h1>
+    <a href="sample.cppsp">[OK]</a>
+<% } else { %>
+    <h1>C++ Servler Pages Sample</h1>
+    <table border="1">
+    <% for(int i=1;i<10;i++) {%>
+        <tr>
+        <% for(int j=1;j<10;j++) { %>
+            <td><%= 2* i * j %></td>
+        <% } %>
+        </tr>
+    <% } %>
+    </table><br>
+    <a href="sample.cppsp">[Refresh]</a><br>
+    History bar: [<%= bar %>]<br>
+    <br>
+    <i>You've got <%=cookies.size()%> cookies.</i>
+    <% if(!cookies.empty()) { %>
+        <a href="sample.cppsp?clear=1">[Clear]</a>
+    <% } %>
+<% } %>
+</body>
+</html>

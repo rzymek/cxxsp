@@ -1,0 +1,113 @@
+<%@ page import="vector,Category.h,Product.h" %>
+<%# using namespace std; %>
+<%! 
+    typedef vector<Category> categories_t; 
+    typedef vector<Product> products_t;
+%>
+<html>
+<head>
+<title>SearchResults</title>
+<link rel="stylesheet" type="text/css" href="style/Style.css">
+</head>
+<body bgcolor="#FFFFFF" link="#000000" alink="#FF0000" vlink="#000000" text="#000000" class="NoisePageBODY">
+<%@ include file="Header.csp" %>
+<p>
+<form method="get">
+  <font class="NoiseFormHeaderFont">Search Products</font> 
+  <table border="0" cellpadding="2" cellspacing="1" class="NoiseFormTABLE">
+    <% if(request.hasAttribute("error")) { %>
+    <tr>
+      <td colspan="2" class="NoiseErrorDataTD"><%= request.getAttribute<string>("error") %></td>
+    </tr>
+    <% } %>
+
+    <tr>
+      <td class="NoiseFieldCaptionTD">Category</td> 
+      <td class="NoiseDataTD">
+        <select class="NoiseSelect" name="category_id">
+          <option selected value="">All</option>
+          <% 
+            categories_t categories = request.getAttribute<categories_t>("categories"); 
+            for(unsigned i=0;i<categories.size();++i) {
+          %>
+          <option value="<%=categories[i].id%>"><%=categories[i].name%></option>
+          <% } %>                        
+        </select>
+      </td> 
+    </tr>
+ 
+    <tr>
+      <td class="NoiseFieldCaptionTD">Keyword</td> 
+      <td class="NoiseDataTD"><input class="NoiseInput" maxlength="250" name="s_keyword" value="<%=request.getParameter("s_keyword")%>">&nbsp;</td> 
+    </tr>
+ 
+    <tr>
+      <td colspan="2" align="right" class="NoiseFieldCaptionTD" nowrap>
+        <input class="NoiseButton" type="submit" value="Search">&nbsp; </td> 
+    </tr>
+ 
+  </table>
+</form>
+</p>
+<font class="NoiseFormHeaderFont" size="4"><b>Search
+Results - <font class="NoiseFormHeaderFont" size="8"><%=request.getAttribute<int>("ResultsFound")%></font>&nbsp;products
+found.</b></font>
+
+<table border="0" cellpadding="2" cellspacing="1" class="NoiseFormTABLE">
+  <% 
+  products_t products = request.getAttribute<products_t>("products"); 
+  if(!products.empty()) { 
+    for(unsigned i=0;i<products.size(); ++i) { 
+        const Product& product = products[i];
+  %> 
+  <tr>
+    <td class="NoiseColumnTD" rowspan="2"><a class="NoiseDataLink" href="ProductDetails.sxx?product_id=<%=product.product_id%>"><img class="NoiseInput" src="<%=product.img%>" border="0"></a></td> 
+    <td class="NoiseDataTD"><a class="NoiseDataLink" href="ProductDetails.sxx?product_id=<%=product.product_id%>"><%=product.name%></a></td> 
+  </tr>
+ 
+  <tr>
+    <td class="NoiseDataTD">Price: $<%=product.price%></td> 
+  </tr>
+ 
+  <tr>
+    <td class="NoiseDataTD" colspan="2">&nbsp;</td> 
+  </tr>
+  <%  } } else { %>
+  <tr>
+    <td class="NoiseDataTD" colspan="2">No records&nbsp;</td> 
+  </tr>
+  <% } %>
+  <tr>
+    <td align="middle" class="NoiseFieldCaptionTD" colspan="2" nowrap>&nbsp; 
+      <% 
+        int pageCount = request.getAttribute<int>("pageCount");
+        int currentPage = request.getAttribute<int>("currentPage");
+        string naviLink = request.getAttribute<string>("naviLink");
+      %>
+      <%
+        if(currentPage>1) { 
+      %>
+        <a class="NoiseNavigatorLink" href="<%=naviLink%><%=1%>">First</a>
+        <a class="NoiseNavigatorLink" href="<%=naviLink%><%=currentPage+1%>">Prev</a>
+      <% } %>  
+      <%
+        for(int page=1;page<=pageCount; ++page) { 
+            if(page==currentPage) 
+                out << page; 
+            else { %>
+      <a class="NoiseNavigatorLink" href="<%=naviLink%><%=page%>"><%=page%></a>
+            <% } %>
+      &nbsp;
+        <% } %>
+      of
+      <%= pageCount %>&nbsp; 
+      <% if(currentPage<pageCount) { %>
+        <a class="NoiseNavigatorLink" href="<%=naviLink%><%=currentPage+1%>">Next</a>
+        <a class="NoiseNavigatorLink" href="<%=naviLink%><%=pageCount%>">Last</a>
+      <% } %>  
+    </td> 
+  </tr>
+</table>
+<%@ include file="Footer.csp" %>
+</body>
+</html>

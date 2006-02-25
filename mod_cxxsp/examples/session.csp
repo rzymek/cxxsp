@@ -1,0 +1,15 @@
+<%@ page session="true" %>
+<%# using namespace std; %>
+<html>
+<head>
+        <title>Session Test</title>
+</head>
+<body>
+<%
+    string bar = session->getAttribute<string>("counter");
+    if(bar.size() > 20) bar.clear();
+    session->setAttribute("counter",bar+"#");
+%>
+   Bar: <%= bar %>
+</body>
+</html>

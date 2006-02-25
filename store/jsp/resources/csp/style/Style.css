@@ -1,0 +1,53 @@
+/* Noise CCSTheme */
+BODY, TABLE, TH, TR, TD, UL, OL, LI, FONT, A, BLOCKQUOTE, LABEL { font-family: Verdana, Tahoma, Helvetica, Arial; font-size: 13px; }
+
+P { margin-top: 0px; margin-bottom: 5px; }
+
+.NoisePageBODY { }
+.NoiseFormTABLE{ }
+.NoiseFormHeaderFont{ font-family: Arial; color: #000000; font-size: 18px; font-weight: bold; }
+.NoiseSectionHeaderFont{ font-family: Arial; color: #395A9C; font-size: 15px; font-weight: bold; }
+.NoiseHighlightFont{ color: #CE0000; font-weight: bold; }
+
+.NoiseFieldCaptionTD { background-color: #FFFFFF; color: #395A9C; font-size: 12px; font-weight: bold; }
+.NoiseDataTD { background-color: #FFFFFF; color: #000000; font-size: 13px; }
+.NoiseErrorDataTD { background-color: #E8F0F6; color: #FF0000; font-size: 13px; }
+.NoiseColumnTD { color: #000000; background-color: #F7F7F7; font-size: 13px; font-weight: bold; }
+.NoiseAltDataTD { background-color: #F7F7F7; color: #000000; font-size: 13px; }
+.NoiseSeparatorTD { height: 1px; background-color: #A3BDD4; }
+.NoiseFooterTD{ background-color: #FFFFFF; color: #000000; font-size: 13px; }
+
+a.NoiseSorterLink:link,a.NoiseSorterLink:visited{ color: #000000; font-size: 13px; text-decoration: underline; }
+a.NoiseSorterLink:hover,a.NoiseSorterLink:active{ color: #000000; font-size: 13px; text-decoration: none; }
+a.NoiseDataLink:link,a.NoiseDataLink:visited{ color: #000000; font-size: 13px; text-decoration: underline; }
+a.NoiseDataLink:hover,a.NoiseDataLink:active{ color: #CE0000; font-size: 13px; text-decoration: none; }
+
+a.NoiseCaptionLink:link,a.NoiseCaptionLink:visited{ font-family: Arial; color: #395A9C; font-size: 15px; font-weight: bold; text-decoration: underline; }
+a.NoiseCaptionLink:hover,a.NoiseCaptionLink:active{ font-family: Arial; color: #CE0000; font-size: 15px; font-weight: bold; text-decoration: none; }
+
+a.NoiseNavigatorLink:link,a.NoiseNavigatorLink:visited{ color: #000000; font-size: 13px; text-decoration: underline; }
+a.NoiseNavigatorLink:hover,a.NoiseNavigatorLink:active{ color: #000000; font-size: 13px; text-decoration: none; }
+
+.NoiseButton { border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: 1px solid #000000; background-color: #395A9C; color: #FFFFFF; font-size: 13px; font-family: Verdana, Tahoma, Helvetica, Arial; font-weight: bold; }
+.NoiseInput { border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: 1px solid #000000; background-color: #FFFFFF; font-size: 13px; font-family: Verdana, Tahoma, Helvetica, Arial; }
+.NoiseTextarea { border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: 1px solid #000000; background-color: #FFFFFF; font-size: 13px; font-family: Verdana, Tahoma, Helvetica, Arial; }
+.NoiseSelect { font-size: 13px; font-family: Verdana, Tahoma, Helvetica, Arial; }
+
+/* Calendar */
+a.today:link,a.today:visited{ color: #FF0000; font-weight: bold; text-decoration: none; }
+a.today:hover,a.today:active{ color: #000000; font-weight: bold; text-decoration: none; }
+a.selectedDay:link,a.selectedDay:visited{ color: #000000; font-weight: bold; text-decoration: none; }
+a.selectedDay:hover,a.selectedDay:active{ color: #FF0000; font-weight: bold; text-decoration: none; }
+a.weekDay:link,a.weekDay:visited{ color: #000000; text-decoration: none; }
+a.weekDay:hover,a.weekDay:active{ color: #FF0000; text-decoration: none; }
+TD.selectedDay { margin: 1px; color: #000000; background-color: #D4E1EC; font-size: 13px; font-weight: bold; }
+TD.today { border-top: 1px solid #FF0000; border-left: 1px solid #FF0000; border-bottom: 1px solid #FF0000; border-right: 1px solid #FF0000; background-color: #FFFFFF; color: #000000; font-size: 13px; }
+TD.workday { background-color: #FFFFFF; color: #000000; font-size: 13px; }
+TD.weekend { background-color: #E4EDF2; color: #000000; font-size: 13px; }
+TH.calendar { margin: 1px; color: #000000; background-color: #D4E1EC; font-size: 13px; font-weight: bold; }
+.CalendarButtons { margin: 1px; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: 1px solid #000000; background-color: #E8F0F6; font-size: 13px; font-family: Verdana, Tahoma, Helvetica, Arial; font-weight: bold; }
+.CalendarControls { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 13px; }
+.Table { border: solid 1px #000000; }
+
+a.TopMenuLink:link,a.TopMenuLink:visited{ color: #FFFFFF; font-size: 11px; text-decoration: none; font-weight:bold }
+a.TopMenuLink:hover,a.TopMenuLink:active{ color: #FFCC00; font-size: 11px; text-decoration: none; font-weight:bold }

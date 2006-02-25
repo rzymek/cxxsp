@@ -1,0 +1,15 @@
+<html>
+<head><title>Number Guess</title></head>
+<body bgcolor="white">
+<%
+int n=1000;
+double f1 = 1, f2 = 1, nf = 0;
+for(int i=0;i<n;++i){
+        nf = f1+f2;
+        f1 = f2;
+        f2 = nf;
+}
+%>
+Then <%= n %>th Fibbonacci number is <%= nf %>.
+</body>
+</html>
