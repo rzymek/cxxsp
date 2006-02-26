@@ -54,16 +54,16 @@
 #define HTTP_SERVLET_H
 
 #include <string>
-#include <GenericServlet.h>
-#include <HttpServletRequest.h>
-#include <HttpServletResponse.h>
-#include <ServletRequest.h>
-#include <ServletResponse.h>
+#include "GenericServlet.h"
+#include "HttpServletRequest.h"
+#include "HttpServletResponse.h"
+#include "ServletRequest.h"
+#include "ServletResponse.h"
+
+#include "ext/HttpServlet/header.h"
 
 namespace servlet {
 
-    #define EXPORT_SERVLET(servlet) extern "C" servlet::HttpServlet* create() { return new servlet(); }
-    
     /**
      *
      * Provides an abstract class to be subclassed to create
@@ -528,6 +528,11 @@ namespace servlet {
          *
          */
         virtual void  service(ServletRequest& req, ServletResponse& res);
+        
+        #include "ext/HttpServlet/body.h"
     };
 }//namespace
+
+#include "ext/HttpServlet/footer.h"
+
 #endif/*HTTP_SERVLET_H*/

@@ -55,8 +55,8 @@
 #define HTTP_SERVLET_RESPONSE_H
 
 #include <string>
-#include <ServletResponse.h>
-#include <Cookie.h>
+#include "ServletResponse.h"
+#include "Cookie.h"
 
 namespace servlet {
 

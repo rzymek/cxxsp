@@ -54,9 +54,9 @@
 #define SERVLET_H
 
 #include <string>
-//#include <ServletConfig.h>
-#include <ServletRequest.h>
-#include <ServletResponse.h>
+//#include "ServletConfig.h"
+#include "ServletRequest.h"
+#include "ServletResponse.h"
 
 namespace servlet {
 

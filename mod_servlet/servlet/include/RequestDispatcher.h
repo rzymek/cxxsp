@@ -55,8 +55,8 @@
 #define REQUEST_DISPATCHER_H
 
 #include <string>
-#include <ServletRequest.h>
-#include <ServletResponse.h>
+#include "ServletRequest.h"
+#include "ServletResponse.h"
 
 namespace servlet {
 

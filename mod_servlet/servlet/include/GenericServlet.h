@@ -57,8 +57,8 @@
 #include <string>
 #include <vector>
 #include <exception>
-#include <Servlet.h>
-#include <ServletConfig.h>
+#include "Servlet.h"
+#include "ServletConfig.h"
 
 namespace servlet {
 
