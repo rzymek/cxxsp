@@ -46,7 +46,7 @@ namespace cxxsp {
         contentType = "text/html ; charset=ISO-8859-1";
         extends = "servlet::HttpServlet";
 
-        head << "#include <HttpServlet.h>" << endl;
+        head << "#include <servlet/HttpServlet.h>" << endl;
     }
 
     string generator::escape(const string& s){
