@@ -18,7 +18,7 @@
 #define SERVLETRESPONSEIMPL_H
 
 #include <string>
-#include <HttpServletResponse.h>
+#include <servlet/HttpServletResponse.h>
 #include <apachestream.h>
 
 struct request_rec;

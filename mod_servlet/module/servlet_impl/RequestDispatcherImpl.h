@@ -17,7 +17,7 @@
 #ifndef REQUEST_DISPATCHER_IMPL_H
 #define REQUEST_DISPATCHER_IMPL_H
 
-#include <RequestDispatcher.h>
+#include <servlet/RequestDispatcher.h>
 
 class RequestDispatcherImpl : public servlet::RequestDispatcher{
    std::string path;

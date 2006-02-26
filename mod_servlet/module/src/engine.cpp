@@ -43,9 +43,11 @@
 #include <stdexcept>
 #include <exception>
 #include <unknown_exception.h>
+
 #include <HttpServletResponseImpl.h>
 #include <HttpServletRequestImpl.h>
-#include <HttpServlet.h>
+#include <servlet/HttpServlet.h>
+
 #include <http_protocol.h>
 #include <http_config.h>
 #include <httpd.h>

@@ -18,8 +18,8 @@
 #define HTTPSESSIONIMPL_H
 
 #include <boost/serialization/access.hpp>
-#include <HttpSession.h>
-#include <ServletContext.h>
+#include <servlet/HttpSession.h>
+#include <servlet/ServletContext.h>
 #include "../src/ipr.h"
 
 class HttpSessionImpl : public servlet::HttpSession {

@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <boost/any.hpp>
-#include <HttpServletRequest.h>
+#include <servlet/HttpServletRequest.h>
 
 
 struct request_rec;

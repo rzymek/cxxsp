@@ -20,9 +20,9 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <HttpServletRequest.h>
-#include <Cookie.h>
-#include <HttpSession.h>
+#include <servlet/HttpServletRequest.h>
+#include <servlet/Cookie.h>
+#include <servlet/HttpSession.h>
 #include "HttpSessionImpl.h"
 #include "ServletRequestImpl.h"
 

@@ -31,13 +31,14 @@
 #include <http_core.h> //apr_get_remote_host
 #include <http_config.h>
 
-#include <HttpServletRequest.h>
-#include <HttpServletRequestImpl.h>
-#include <HttpServletRequest.h>
-#include <Cookie.h>
-#include <HttpSessionImpl.h>
+#include <servlet/HttpServletRequest.h>
+#include "HttpServletRequestImpl.h"
+#include <servlet/HttpServletRequest.h>
+#include <servlet/Cookie.h>
+
+#include "HttpSessionImpl.h"
 //#include <Locale.h>
-#include <RequestDispatcherImpl.h>
+#include "RequestDispatcherImpl.h"
 
 #include <session_manager.h>
 #include <utils/map.h>

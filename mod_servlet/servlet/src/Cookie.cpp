@@ -50,7 +50,7 @@
  *
  */
 
-#include <Cookie.h>
+#include <servlet/Cookie.h>
 #include <algorithm>
 #include <stdexcept>
 

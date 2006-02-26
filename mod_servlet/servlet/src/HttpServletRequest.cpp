@@ -50,7 +50,7 @@
  *
  */
 
-#include <HttpServletRequest.h>
+#include <servlet/HttpServletRequest.h>
 
 using namespace servlet;
 

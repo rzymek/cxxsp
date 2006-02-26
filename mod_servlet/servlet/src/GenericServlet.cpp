@@ -50,8 +50,8 @@
  *
  */
 
-#include <GenericServlet.h>
-#include <ServletContext.h>
+#include <servlet/GenericServlet.h>
+#include <servlet/ServletContext.h>
 
 using namespace std;
 using namespace servlet;

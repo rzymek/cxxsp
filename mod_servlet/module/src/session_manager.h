@@ -18,8 +18,8 @@
 #define SESSION_MANAGER_H
 
 #include <string>
-#include <HttpSession.h>
-#include <HttpServletResponse.h>
+#include <servlet/HttpSession.h>
+#include <servlet/HttpServletResponse.h>
 #include <httpd.h>
 #include <list>
 

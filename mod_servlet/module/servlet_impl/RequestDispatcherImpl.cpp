@@ -14,8 +14,8 @@
  *  along with this program; if not, write to the Free Software
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
-#include <RequestDispatcherImpl.h>
-#include <HttpServletRequestImpl.h>
+#include "RequestDispatcherImpl.h"
+#include "HttpServletRequestImpl.h"
 #include <apache2/http_request.h>
 #include <apache2/http_config.h>
 #include <boost/algorithm/string/erase.hpp>

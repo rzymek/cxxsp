@@ -20,9 +20,9 @@
 #include <httpd.h>
 #include <http_config.h>
 #include "loader.h"
-#include <HttpServlet.h>
-#include <HttpServletResponse.h>
-#include <HttpServletRequest.h>
+#include <servlet/HttpServlet.h>
+#include <servlet/HttpServletResponse.h>
+#include <servlet/HttpServletRequest.h>
 #include "engine.h"
 #include "session_manager.h"
 

@@ -50,15 +50,14 @@
  *
  */
 
-#include <stdexcept>
-#include <HttpServlet.h>
-#include <NoBodyResponse.h>
-#include <HttpServletRequest.h>
-#include <HttpServletResponse.h>
-#include <ServletRequest.h>
-#include <ServletResponse.h>
+#include <servlet/HttpServlet.h>
+#include "NoBodyResponse.h"
+#include <servlet/HttpServletRequest.h>
+#include <servlet/HttpServletResponse.h>
+#include <servlet/ServletRequest.h>
+#include <servlet/ServletResponse.h>
 #include <boost/algorithm/string/predicate.hpp>
-#include <httpd.h>
+#include <stdexcept>
 
 using namespace std;
 using namespace servlet;

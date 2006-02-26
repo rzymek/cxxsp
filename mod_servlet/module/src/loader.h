@@ -23,7 +23,7 @@
 #include <apr_file_info.h>
 #include "dso_code.h"
 #include <apr_pools.h>
-#include <HttpServlet.h>
+#include <servlet/HttpServlet.h>
 
 
 #include <iostream>

@@ -55,12 +55,12 @@
 
 #include <string>
 #include <iostream>
-#include <onobodystream.h>
-#include <GenericServlet.h>
-#include <ServletRequest.h>
-#include <ServletResponse.h>
-#include <HttpServletResponse.h>
-//#include <Locale.h>
+#include "onobodystream.h"
+#include <servlet/GenericServlet.h>
+#include <servlet/ServletRequest.h>
+#include <servlet/ServletResponse.h>
+#include <servlet/HttpServletResponse.h>
+//#include <servlet/Locale.h>
 
 using namespace servlet;
 
