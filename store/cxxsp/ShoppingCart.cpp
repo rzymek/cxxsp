@@ -1,7 +1,7 @@
 #include "mysql.h"
-#include <HttpServlet.h>
-#include <HttpSession.h>
-#include <RequestDispatcher.h>
+#include <servlet/HttpServlet.h>
+#include <servlet/HttpSession.h>
+#include <servlet/RequestDispatcher.h>
 #include "cart_item.h"
 #include <boost/lexical_cast.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp>

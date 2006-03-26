@@ -1,5 +1,5 @@
-#include <HttpServlet.h>
-#include <RequestDispatcher.h>
+#include <servlet/HttpServlet.h>
+#include <servlet/RequestDispatcher.h>
 #include <boost/serialization/vector.hpp>
 #include <stdexcept>
 #include <unistd.h>

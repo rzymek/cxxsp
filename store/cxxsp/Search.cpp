@@ -1,10 +1,10 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/lexical_cast.hpp>
-#include <RequestDispatcher.h>
+#include <servlet/RequestDispatcher.h>
 #include <vector>
 #include "Category.h"
 #include "mysql.h"
-#include <HttpServlet.h>
+#include <servlet/HttpServlet.h>
 using namespace servlet;
 
 class Search : public HttpServlet {

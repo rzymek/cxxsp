@@ -1,11 +1,11 @@
-#include <RequestDispatcher.h>
+#include <servlet/RequestDispatcher.h>
 #include <boost/lexical_cast.hpp>
 #include <boost/shared_ptr.hpp>
 #include "Product.h"
 #include "Category.h"
 #include "Article.h"
 #include "mysql.h"
-#include <HttpServlet.h>
+#include <servlet/HttpServlet.h>
 
 using namespace std;
 using boost::lexical_cast;

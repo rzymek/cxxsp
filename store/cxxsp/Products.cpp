@@ -1,10 +1,10 @@
 #include <boost/lexical_cast.hpp>
-#include <RequestDispatcher.h>
+#include <servlet/RequestDispatcher.h>
 #include <boost/shared_ptr.hpp>
 #include "Product.h"
 #include "Category.h"
 #include "mysql.h"
-#include <HttpServlet.h>
+#include <servlet/HttpServlet.h>
 #include <math.h>//ceilf
 
 using namespace std;
