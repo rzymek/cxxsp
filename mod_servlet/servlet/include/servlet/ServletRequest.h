@@ -59,7 +59,6 @@
 #include <vector>
 #include <map>
 #include <memory>
-#include <boost/any.hpp>
 #include <iostream>
 
 #include "ext/ServletRequest/header.h"

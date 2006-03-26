@@ -1,4 +1,1 @@
-namespace boost {
-    class any;
-}        
-
+#include <boost/any.hpp>
