@@ -1,6 +1,7 @@
 OBJS=obj/compiler.o obj/engine.o  obj/mod_cxxsp.o
 INCLUDE=-Isrc -I$(APACHE_HOME)/include -I../../mod_servlet/servlet -I../cxxsp -I../../common
-LIBS=-L../../common -lcommon
+LIBS=../../common/libcxxsp-common.a
+#LIBS=-L../../common -lcxxsp-common
 TARGET=mod_cxxsp.so
 NAME=cxxsp
 APXS=$(APACHE_HOME)/bin/apxs

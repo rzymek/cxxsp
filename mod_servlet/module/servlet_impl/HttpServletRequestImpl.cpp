@@ -326,8 +326,7 @@ string HttpServletRequestImpl::generate_session_id() const{
     id=buf;
 
     //port
-    apr_port_t port;
-    apr_sockaddr_port_get(&port, r->connection->remote_addr);
+	apr_port_t port = r->connection->remote_addr->port;
     memcpy(buf, &port, sizeof(apr_port_t));
     buf[sizeof(int)] = '\0';
     id+=buf;

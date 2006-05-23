@@ -222,9 +222,7 @@ auto_ptr<RequestDispatcher> ServletRequestImpl::getRequestDispatcher(const strin
 }
 //----------------------------------------------------------------------------
 int  ServletRequestImpl::getRemotePort() const{
-    apr_port_t port;
-    apr_sockaddr_port_get(&port, r->connection->remote_addr);
-    return static_cast<int>(port);
+	return static_cast<int>(r->connection->remote_addr->port);
 }
 //----------------------------------------------------------------------------
 string  ServletRequestImpl::getLocalName() const{

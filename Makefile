@@ -1,7 +1,7 @@
-export APACHE_HOME=/home/rzymek/devel/00cxxsp/httpd
+export APACHE_HOME=/home/rzymek/devel/cxxsp/apache2
 export HTDOCS=$(APACHE_HOME)/htdocs
 
-export CXX=g++ -ac -Wall -ansi -fPIC -march=athlon-xp -O3 -mmmx -m3dnow -msse -mfpmath=sse -pipe -funroll-loops -fomit-frame-pointer -pthread 
+export CXX=g++ -Wall -ansi -fPIC -O2 -pthread 
 #export CXX=g++ -g -Wall -ansi -fPIC -march=athlon-xp -O3 -mmmx -m3dnow -msse -mfpmath=sse -pipe -funroll-loops -fomit-frame-pointer -pthread -finstrument-functions -lfnccheck 
 #export CXX=g++ -g -O0 -Wall -ansi -pthread -pg
 

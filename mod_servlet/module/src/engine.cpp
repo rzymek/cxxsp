@@ -85,7 +85,7 @@ inline int display_exception(const exception& ex, request_rec* r,
 extern "C" module AP_MODULE_DECLARE_DATA servlet_module;
 
 int servlet::engine::process(request_rec * r) {
-        //cout << "servlet::engine::process(" << r->filename << ")" << endl;
+        cout << "servlet::engine::process(" << r->filename << ")" << endl;
         HttpServletRequestImpl request(r);
         HttpServletResponseImpl response(r);
         request.response = &response;
